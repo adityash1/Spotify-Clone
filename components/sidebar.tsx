@@ -1,4 +1,5 @@
 import NextImage from "next/image";
+import NextLink from "next/link";
 import {
   Box,
   List,
@@ -19,17 +20,17 @@ import {
 
 const navMenu = [
   {
-    home: "Home",
+    name: "Home",
     icon: MdHome,
     route: "/",
   },
   {
-    search: "Search",
+    name: "Search",
     icon: MdSearch,
     route: "/search",
   },
   {
-    library: "Library",
+    name: "Library",
     icon: MdLibraryMusic,
     route: "/library",
   },
@@ -44,6 +45,31 @@ const Sidebar = () => {
       paddingX="5px"
       color="gray"
     >
+      <Box paddingY="20px">
+        <Box width="120px" marginBottom="20px" paddingX="20px">
+          <NextImage src="/logo.svg" height={60} width={120} />
+        </Box>
+        <Box marginBottom="20px">
+          <List spacing={2}>
+            {navMenu.map((menu) => (
+              <ListItem key={menu.name} paddingX="20px" fontSize="20px">
+                <LinkBox>
+                  <NextLink href={menu.route} passHref>
+                    <LinkOverlay>
+                      <ListIcon
+                        as={menu.icon}
+                        color="white"
+                        marginRight="20px"
+                      />
+                      {menu.name}
+                    </LinkOverlay>
+                  </NextLink>
+                </LinkBox>
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+      </Box>
     </Box>
   );
 };
