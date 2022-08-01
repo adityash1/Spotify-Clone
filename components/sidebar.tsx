@@ -30,7 +30,7 @@ const navMenu = [
     route: "/search",
   },
   {
-    name: "Library",
+    name: "Your Library",
     icon: MdLibraryMusic,
     route: "/library",
   },
@@ -43,7 +43,7 @@ const musicMenu = [
     route: "/",
   },
   {
-    name: "Favorites",
+    name: "Liked Songs",
     icon: MdFavorite,
     route: "/favorites",
   },
@@ -110,13 +110,20 @@ const Sidebar = () => {
           overflowY="auto"
           paddingY="20px"
           sx={{
+            "*": {
+              scrollbarWidth: "thin",
+              scrollbaColor: "gray.900 gray.800",
+            },
             "&::-webkit-scrollbar": {
-              width: "16px",
-              borderRadius: "8px",
-              backgroundColor: `rgba(0, 0, 0, 0.2)`,
+              width: "8px",
+            },
+            "&::-webkit-scrollbar-track": {
+              background: "gray.800",
+              borderRadius: "20px",
             },
             "&::-webkit-scrollbar-thumb": {
-              backgroundColor: `rgba(0, 0, 0, 0.5)`,
+              backgroundColor: "gray.900",
+              borderRadius: "20px",
             },
           }}
         >
