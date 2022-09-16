@@ -6,7 +6,6 @@ import {
   ListItem,
   ListIcon,
   Divider,
-  Center,
   LinkBox,
   LinkOverlay,
 } from "@chakra-ui/layout";
@@ -14,8 +13,8 @@ import {
   MdHome,
   MdSearch,
   MdLibraryMusic,
-  MdFavorite,
   MdPlaylistAdd,
+  MdFavorite,
 } from "react-icons/md";
 
 const navMenu = [
@@ -55,19 +54,19 @@ const Sidebar = () => {
   return (
     <Box
       width="100%"
-      height="calc(100vh-100px)"
+      height="calc(100vh - 100px)"
       bg="black"
       paddingX="5px"
       color="gray"
     >
-      <Box paddingY="20px" height="100vh">
+      <Box paddingY="20px" height="100%">
         <Box width="120px" marginBottom="20px" paddingX="20px">
           <NextImage src="/logo.svg" height={60} width={120} />
         </Box>
         <Box marginBottom="20px">
           <List spacing={2}>
             {navMenu.map((menu) => (
-              <ListItem key={menu.name} paddingX="20px" fontSize="20px">
+              <ListItem paddingX="20px" fontSize="16px" key={menu.name}>
                 <LinkBox>
                   <NextLink href={menu.route} passHref>
                     <LinkOverlay>
@@ -84,19 +83,19 @@ const Sidebar = () => {
             ))}
           </List>
         </Box>
-        <Box marginTop="20px" marginBottom="20px">
+        <Box marginTop="20px">
           <List spacing={2}>
-            {musicMenu.map((item) => (
-              <ListItem key={item.name} paddingX="20px" fontSize="16px">
+            {musicMenu.map((menu) => (
+              <ListItem paddingX="20px" fontSize="16px" key={menu.name}>
                 <LinkBox>
-                  <NextLink href={item.route} passHref>
+                  <NextLink href={menu.route} passHref>
                     <LinkOverlay>
                       <ListIcon
-                        as={item.icon}
+                        as={menu.icon}
                         color="white"
                         marginRight="20px"
                       />
-                      {item.name}
+                      {menu.name}
                     </LinkOverlay>
                   </NextLink>
                 </LinkBox>
@@ -110,34 +109,33 @@ const Sidebar = () => {
           overflowY="auto"
           paddingY="20px"
           sx={{
-            "*": {
-              scrollbarWidth: "thin",
-              scrollbaColor: "gray.900 gray.800",
-            },
-            "&::-webkit-scrollbar": {
+            "::-webkit-scrollbar": {
               width: "8px",
             },
-            "&::-webkit-scrollbar-track": {
-              background: "gray.800",
+            "::-webkit-scrollbar-track": {
+              backgroundColor: "gray.600",
               borderRadius: "20px",
             },
-            "&::-webkit-scrollbar-thumb": {
-              backgroundColor: "gray.900",
+            "::-webkit-scrollbar-thumb": {
+              backgroundColor: "gray.800",
               borderRadius: "20px",
+            },
+            "::-webkit-scrollbar-thumb:hover": {
+              backgroundColor: "#a8bbbf",
             },
           }}
         >
-          {playlists.map((playlist) => (
-            <List spacing={2}>
-              <ListItem key={playlist} paddingX="20px">
+          <List spacing={2}>
+            {playlists.map((playlist) => (
+              <ListItem paddingX="20px" key={playlist}>
                 <LinkBox>
                   <NextLink href="/" passHref>
                     <LinkOverlay>{playlist}</LinkOverlay>
                   </NextLink>
                 </LinkBox>
               </ListItem>
-            </List>
-          ))}
+            ))}
+          </List>
         </Box>
       </Box>
     </Box>
