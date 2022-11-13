@@ -14,7 +14,7 @@ const Home = ({ artists }) => {
       subtitle="profile"
       title={`${user?.firstName} ${user?.lastName}`}
       description={`${user?.playlistsCount} public playlists`}
-      image="https://dl.dropboxusercontent.com/s/bgiv0ssz3xpotz9/peep.png?dl=0"
+      image="https://avatars.githubusercontent.com/u/65771169?v=4"
     >
       <Box color="white" paddingX="40px">
         <Box marginBottom="40px">
@@ -28,7 +28,7 @@ const Home = ({ artists }) => {
             <Box paddingX="10px" width="20%">
               <Box bg="gray.900" borderRadius="4px" padding="15px" width="100%">
                 <Image
-                  src="https://placekitten.com/300/300"
+                  src={`https://source.unsplash.com/200x200/?music,${artist.name}`}
                   borderRadius="100%"
                 />
                 <Box marginTop="20px">
