@@ -32,6 +32,7 @@
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
     "@types/react": "^18.0.15",
+    "@types/react-howler": "^5.2.0",
     "@typescript-eslint/eslint-plugin": "^5.30.7",
     "@typescript-eslint/parser": "^5.30.7",
     "babel-plugin-superjson-next": "^0.4.3",
