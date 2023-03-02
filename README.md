@@ -1,17 +1,3 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
 Sample Credentials :-
 
 ```bash
@@ -20,3 +6,5 @@ password: password
 ```
 
 you may need to refresh after clicking on `signin`
+
+<img src="https://github.com/adityash1/Trax/blob/main/Screenrecord.gif" width="960" height="480" />
